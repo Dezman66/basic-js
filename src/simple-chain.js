@@ -1,4 +1,3 @@
-const CustomError = require("../extensions/custom-error");
 let links = [];
 
 const chainMaker = {
@@ -12,7 +11,7 @@ const chainMaker = {
   removeLink(position) {
     if (!links[position - 1]) {
       links = [];
-      throw new CustomError();
+      throw new Error();
     }
     else {
       links.splice(position - 1, 1);
