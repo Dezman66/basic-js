@@ -1,12 +1,10 @@
-const CustomError = require("../extensions/custom-error");
-
 module.exports = function repeater(str, options) {
   const separator = options.separator || "+";
   const additionSeparator = options.additionSeparator || "|";
   const repeatTimes = options.repeatTimes || 0;
   const additionRepeatTimes = options.additionRepeatTimes || 0;
-  const addition = options.addition !== undefined ? options.addition === null ? "null" : options.addition.toString() : "";
-  const string = str === null ? "null" : str.toString();
+  const addition = options.addition !== undefined ? options.addition === null ? "null" : `${options.addition}` : "";
+  const string = str === null ? "null" : `${str}`;
 
   let additionalResult = string;
   
